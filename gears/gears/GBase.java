@@ -25,8 +25,8 @@ public class GBase {
      * Adds a message to the console's message view (F1)
      * @param message The message to be added
      */
-    public static void log(String message){
-        console.addMessage(message);
+    public static void log(Object message){
+        console.addMessage(message.toString());
     }
     /**
      * Registers a variable to be watched by the console's real-time variable view (F2).

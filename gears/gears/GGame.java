@@ -52,7 +52,7 @@ public class GGame extends JPanel{
         GBase.console = console;
 
         //Build our window
-        gameFrame = new JFrame("Gears");
+        gameFrame = new JFrame("Gears Engine");
         gameFrame.add(this);
         gameFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         gameFrame.addWindowListener(new WindowAdapter() {

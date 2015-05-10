@@ -46,4 +46,24 @@ public class GObject {
     public void destroy(){
     	
     }
+    
+    public boolean checkPointInBounds(GPoint p){
+    	if(p.x < x)
+    		return false;
+    	if(p.x > x + width)
+    		return false;
+    	if(p.y < y)
+    		return false;
+    	if(p.y > y + height)
+    		return false;
+    	return true;
+    }
+    
+    public boolean checkIntersection(GObject o){
+		  return (Math.abs(x - o.x) * 2 < (width + o.width)) && (Math.abs(y - o.y) * 2 < (height + o.height));
+    }
+    
+    public boolean checkIntersection(GRect r){
+    	return (Math.abs(x - r.x) * 2 < (width + r.width)) && (Math.abs(y - r.y) * 2 < (height + r.height));
+    }
 }

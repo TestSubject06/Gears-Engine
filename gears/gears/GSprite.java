@@ -204,6 +204,24 @@ public class GSprite extends GObject{
     public void play(String animName){
         play(animName, false);
     }
+    
+    /**
+     * If the sprite is already playing an animation, it just restarts it.
+     */
+    public void restartAnimation(){
+    	if(curAnim != null){
+    		_curFrame = 0;
+    		_curIndex = 0;
+    		_frameTimer = 0;
+    		if(curAnim.delay <= 0)
+                finished = true;
+            else
+                finished = false;
+            _curIndex = curAnim.frames[_curFrame];
+            dirty = true;
+            return;
+    	}
+    }
 
     /**
      * Creates a square image with the specified height and width, with the specified color.

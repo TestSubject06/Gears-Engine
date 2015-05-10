@@ -34,7 +34,13 @@ public class GUtils {
         return new Color(r, g, b, alpha);
     }
     
-    public static Color RGBAfPre(int color, float a){
+    /**
+     * Takes in a premultiplied color and an alpha value, and then returns the color with alpha applied.
+     * @param color A color in the format of 0xRRGGBB
+     * @param a the percentage (0-1) of how opaque this is
+     * @return returns the color
+     */
+    public static Color RGBAfPremultiplied(int color, float a){
     	color = color * Math.round(a*255);
     	return new Color(color, true);
     }
@@ -46,11 +52,12 @@ public class GUtils {
 	 * @param a2 the second array
 	 * @return returns a1 + a2 as the sum of the elements.
 	 */
-	public int[] addArrays(int[] a1, int[] a2){
+	public static int[] addArrays(int[] a1, int[] a2){
 		int[] a = new int[a1.length];
 		for(int i = 0; i<a1.length; i++){
 			a[i] = a1[i] + a2[i];
 		}
 		return a;
 	}
+	
 }
