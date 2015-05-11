@@ -11,7 +11,7 @@ import java.util.ArrayList;
 /**
  * Contains all of the input listeners for the engine.
  * the keys in this class correspond to a standard QWERTY US keyboard.
- * @author Zack
+ * @author Zack, bro
  */
 public class GInput implements KeyListener, MouseWheelListener, MouseListener {
 

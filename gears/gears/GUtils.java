@@ -41,7 +41,7 @@ public class GUtils {
      * @return returns the color
      */
     public static Color RGBAfPremultiplied(int color, float a){
-    	color = color * Math.round(a*255);
+    	color = color<<8 + (Math.round(a*255));
     	return new Color(color, true);
     }
     

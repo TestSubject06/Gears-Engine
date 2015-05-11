@@ -19,7 +19,7 @@ public class GBase {
     public static int gameHeight;
     public static GInput input;
     public static GConsole console;
-
+    public static GGame gameInstance;
 
     /**
      * Adds a message to the console's message view (F1)

@@ -7,6 +7,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.MouseInfo;
+import java.awt.Rectangle;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -41,6 +42,8 @@ public class GGame extends JPanel{
         setPreferredSize(dim);
         setSize(dim);
         setFocusable(true);
+        setLayout(null);
+        setBackground(new Color(0x0, true));
 
         //Initialize game things
         lastTime = System.currentTimeMillis();
@@ -63,6 +66,7 @@ public class GGame extends JPanel{
             }
         });
         gameFrame.pack();
+        GBase.gameInstance = this;
         this.bgColor = bgColor;
         if(bgColor != null)
             gameFrame.setBackground(bgColor);
@@ -100,6 +104,7 @@ public class GGame extends JPanel{
         GBase.input.update(MouseInfo.getPointerInfo().getLocation().x - getLocationOnScreen().x, MouseInfo.getPointerInfo().getLocation().y - getLocationOnScreen().y);
 
         repaint();
+      
     }
 
     /**
@@ -160,6 +165,7 @@ public class GGame extends JPanel{
         }catch(Throwable t){
             //Get mad as shit, becuase this should never fail.
         }
+        super.paint(g);
         update(g);
     }
 }
