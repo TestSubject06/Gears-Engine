@@ -240,6 +240,8 @@ public class GSprite extends GObject{
         frameHeight = height;
         frameWidth = width;
         g.dispose();
+        this.width = width;
+        this.height = height;
     }
     
     /**

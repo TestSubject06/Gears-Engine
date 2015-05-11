@@ -44,7 +44,8 @@ public class GObject {
     }
     
     public void destroy(){
-    	
+    	active = false;
+    	exists = false;
     }
     
     public boolean checkPointInBounds(GPoint p){

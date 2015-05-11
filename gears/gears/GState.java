@@ -54,6 +54,9 @@ public class GState {
      */
     public void destroy(){
     	GBase.input.unRegisterListener(this);
+    	for(GObject a : members){
+    		a.destroy();
+    	}
     }
 
     /**
